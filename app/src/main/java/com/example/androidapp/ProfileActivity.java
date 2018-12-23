@@ -1,5 +1,6 @@
 package com.example.androidapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -12,10 +13,24 @@ public class ProfileActivity extends AppCompatActivity {
     private EditText editTextField;
     private TextView textViewDate;
 
+    private static final String ID_KEY = "ID_KEY";
+
+    public static Intent getIntent(final Context context, final long id) {
+        final Intent intent = new Intent(context, ProfileActivity.class);
+        intent.putExtra(ID_KEY, id);
+        return intent;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        final long id = getIntent().getLongExtra(ID_KEY, -1);
+        final Person person = new Person(id, "some_name_" + id);
+
+        final TextView textViewName = findViewById(R.id.text_view_name);
+        textViewName.setText(person.getName());
 
         editTextField = findViewById(R.id.edit_text);
         textViewDate = findViewById(R.id.text_view_date);
