@@ -17,9 +17,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".RecyclerViewActivity"
+            android:parentActivityName=".MainActivity"
+            > </activity>
+        <activity
             android:name=".ProfileActivity"
             android:label="ProfileActivity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".RecyclerViewActivity"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
