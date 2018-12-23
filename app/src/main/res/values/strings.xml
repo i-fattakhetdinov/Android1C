@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AndroidApp</string>
+    <string name="edit_text_hint">Заметка о человеке</string>
+    <string name="send_email_button_name">Send email</string>
+    <string name="open_profile_button_name">Open profile</string>
+    <string name="profile_name">Some name</string>
+    <string name="save_date_button_name">Save</string>
+    <string name="default_date">Set date</string>
+</resources>
